@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hawk.dao.UserMapper">
+    <resultMap id="User" type="com.hawk.entity.User">
+        <id column="id" property="id" />
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="sex" property="sex" jdbcType="INTEGER"/>
+        <result column="sex" property="sex" jdbcType="INTEGER" />
+        <!--<result column="sex" property="sex" jdbcType="INTEGER" typeHandler="com.hawk.util.SexTypeHandler"/>-->
+    </resultMap>
+
+    <select id="getUserById" resultMap="User">
+        select * from user where id= #{id}
+    </select>
+
+    <!--<insert id="insert" parameterType="com.hawk.entity.User" useGeneratedKeys="true" keyProperty="id">
+        insert into user(name, age, sex) VALUES (#{name},#{age},#{sex,typeHandler=com.hawk.util.SexTypeHandler})
+    </insert>-->
+
+    <select id="findAll" resultMap="User">
+        select * from user
+    </select>
+</mapper>
