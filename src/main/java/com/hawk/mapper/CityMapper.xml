@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hawk.dao.CityMapper">
+    <select id="findCityAll" resultMap="city_map">
+        select * from city where level = '0'
+    </select>
+
+    <resultMap id="city_map" type="com.hawk.entity.City">
+        <id column="id" property="id" />
+        <result column="pid" property="parentId"/>
+        <result column="level" property="level" />
+        <result column="name" property="name" />
+        <collection column="id" property="cities" ofType="com.hawk.entity.City" select="findCityById"/>
+    </resultMap>
+
+    <select id="findCityById" parameterType="String" resultMap="city_map">
+        select * from city where pid = #{id}
+    </select>
+</mapper>

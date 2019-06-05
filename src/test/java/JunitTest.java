@@ -1,5 +1,7 @@
 import com.alibaba.fastjson.JSON;
+import com.hawk.entity.City;
 import com.hawk.entity.User;
+import com.hawk.service.CityService;
 import com.hawk.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +24,8 @@ import java.util.List;
 public class JunitTest {
     @Autowired
     private UserService userService;
+    @Autowired
+    private CityService cityService;
 
     @Test
     public void findUser() {
@@ -45,5 +49,11 @@ public class JunitTest {
         users.stream().filter(user -> user.getAge() > 18).forEach(user1 -> {
             System.out.println("姓名:" + user1.getName() + "  性别:" + user1.getSex() + "  年龄:" + user1.getAge());
         });
+    }
+
+    @Test
+    public void findCityAll(){
+        List<City> cities = cityService.findCityAll();
+        System.out.println(JSON.toJSONString(cities));
     }
 }

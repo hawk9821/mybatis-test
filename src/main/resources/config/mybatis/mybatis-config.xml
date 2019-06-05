@@ -80,6 +80,7 @@
 
     <mappers>
         <mapper resource="com/hawk/mapper/UserMapper.xml"/>
+        <mapper resource="com/hawk/mapper/CityMapper.xml"/>
         <!--<package name="com.hawk.xml"/>-->
     </mappers>
 

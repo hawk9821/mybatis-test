@@ -79,7 +79,8 @@
 
     <mappers>
         <mapper resource="com/hawk/mapper/UserMapper.xml"/>
-        <!--<package name="com.hawk.xml"/>-->
+        <mapper resource="com/hawk/mapper/CityMapper.xml"/>
+        <!--<package name="com.hawk.mapper"/>-->
     </mappers>
 
 

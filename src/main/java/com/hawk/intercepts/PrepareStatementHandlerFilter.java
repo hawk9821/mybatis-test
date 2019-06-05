@@ -25,6 +25,6 @@ public class PrepareStatementHandlerFilter implements Interceptor {
 
     @Override
     public void setProperties(Properties properties) {
-        System.out.println("是否打印日志  ================== " +properties.get("printSql"));
+        System.out.println("是否打印日志  ================== " + properties.get("printSql"));
     }
 }

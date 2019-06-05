@@ -6,7 +6,6 @@
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="age" property="age" jdbcType="INTEGER"/>
         <result column="sex" property="sex" jdbcType="INTEGER"/>
-        <result column="sex" property="sex" jdbcType="INTEGER" />
         <!--<result column="sex" property="sex" jdbcType="INTEGER" typeHandler="com.hawk.util.SexTypeHandler"/>-->
     </resultMap>
 

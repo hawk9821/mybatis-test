@@ -3,8 +3,6 @@ package com.hawk.intercepts;
 import org.apache.ibatis.executor.resultset.ResultSetHandler;
 import org.apache.ibatis.plugin.*;
 
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.Properties;
 
@@ -17,7 +15,6 @@ public class ResultSetHandlerFilter implements Interceptor {
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
         System.out.println("ResultSetHandlerFilter =======================");
-        Statement statement = (Statement) invocation.getArgs()[0];
         return invocation.proceed();
     }
 
